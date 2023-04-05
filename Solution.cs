@@ -16,7 +16,6 @@ namespace DotNetTestApp
 
             for (int i = 0; i < A.Length; i++)
             {
-                //Console.WriteLine($"{i}) {A[i]}");
                 if (!regex.IsMatch(A[i]))
                 {
                     answer.Add(i);
