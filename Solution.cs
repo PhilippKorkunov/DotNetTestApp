@@ -9,15 +9,14 @@ namespace DotNetTestApp
     {
         public static int[] solution(string[] A, string[] B)
         {
-            string pattern = String.Join("|", B.Select(x => $@"\w*{x}"));
-            Console.WriteLine(pattern);
-
+            string pattern = String.Join("|", B.Select(x => $@"\w*{x}$"));
             Regex regex = new(pattern, RegexOptions.Compiled);
 
             List<int> answer = new();
 
             for (int i = 0; i < A.Length; i++)
             {
+                //Console.WriteLine($"{i}) {A[i]}");
                 if (!regex.IsMatch(A[i]))
                 {
                     answer.Add(i);
